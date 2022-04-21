@@ -2,9 +2,9 @@ import requests
 import json
 import komoot
 
-email = "test@example.com"
-password = "123456"
-client_id = "111111111111"
+email = "martin@martinvanwieringen.nl"
+password = "lAQFm95BlHj021*aqWMP@%"
+client_id = "2435824810868"
 login_url = "https://account.komoot.com/v1/signin"
 tour_url = f"https://www.komoot.de/user/{client_id}/tours"
 
@@ -41,10 +41,14 @@ if response.status_code != 200:
 
 data = response.json()
 
+print('data'+json.dumps(data))
+
 tours = data["user"]["_embedded"]["tours"]["_embedded"]["items"]
 
 for idx in range(len(tours)):
 	print(f"({idx+1}) {tours[idx]['name']}")
+
+
 
 tour_nr = int(input("Tour ID: "))
 tour_nr -= 1

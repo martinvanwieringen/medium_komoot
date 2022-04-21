@@ -1,5 +1,6 @@
 #### Usage
 `python3 get_data.py`
+py get_data.py
 
 #### Dependencies
 * requests
